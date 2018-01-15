@@ -1,6 +1,6 @@
 <?php
 
-require('model/frontend.php');
+require('model/model.php');
 
 function listPosts()
 {
