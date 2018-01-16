@@ -24,10 +24,11 @@ function getComments($postId)
 {
 
 	$db = dbConnect();
-	$req = $db->prepare('SELECT comment_id, comment_content, comment_date, post_id, user_id FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
-	$req->execute(array($postId));
+	$comments = $db->prepare('SELECT comment_id, comment_content, comment_date, id, user_id FROM comments WHERE id = ? ORDER BY comment_date DESC');
+	$comments->execute(array($postId));
 
 	return $comments;
+
 }
 
 function dbConnect()

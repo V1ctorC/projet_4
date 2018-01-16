@@ -1,4 +1,4 @@
-<?php $title = htmlspecialchars($post['title']); ?>
+<?php $title = htmlspecialchars($post['post_title']); ?>
 
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
@@ -6,12 +6,12 @@
 
 <div class="news">
     <h3>
-        <?= htmlspecialchars($post['title']) ?>
-        <em>le <?= $post['creation_date_fr'] ?></em>
+        <?= htmlspecialchars($post['post_title']) ?>
+        <em>le <?= $post['post_dateAdd'] ?></em>
     </h3>
     
     <p>
-        <?= nl2br(htmlspecialchars($post['content'])) ?>
+        <?= nl2br(htmlspecialchars($post['post_content'])) ?>
     </p>
 </div>
 
@@ -21,8 +21,8 @@
 while ($comment = $comments->fetch())
 {
 ?>
-    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+    <p><strong></strong> le <?= $comment['comment_date'] ?></p>
+    <p><?= nl2br(htmlspecialchars($comment['comment_content'])) ?></p>
 <?php
 }
 ?>
