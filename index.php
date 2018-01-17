@@ -21,14 +21,12 @@ try{
                 }
                 else {
                     throw new Exception("Erreur : tous les champs ne sont pas remplis !");
-                    
-                    echo '';
+
                 }
             }
             else {
                 throw new Exception("Erreur : aucun identifiant de billet envoyé");
-                
-                echo '';
+
             }
         }
     }
@@ -37,6 +35,6 @@ try{
     }
 }
 
-catch(Exection $e){
-    echo "Erreur :" $e->getMessage();
+catch(Exception $e){
+    die('Erreur : '.$e->getMessage());
 }
