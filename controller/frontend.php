@@ -36,3 +36,18 @@ function addComment($postId, $author, $comment)
         header('Location: index.php?action=post&id=' . $postId);
     }
 }
+
+function edit($newComment)
+{
+	$commentManager = new CommentManager;
+
+	$affectedLines = $commentManager->editComment($commentId, $newComment);
+
+	if ($affectedLines === false) {
+		throw new Exception("Impossible de modifier le commentaire");
+		
+	}
+	else {
+		header('Location: ')
+	}
+}
