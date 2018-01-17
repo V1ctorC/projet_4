@@ -29,6 +29,9 @@ try{
 
             }
         }
+        elseif ($_GET['action'] == 'editComment') {
+            
+        }
     }
     else {
         listPosts();
