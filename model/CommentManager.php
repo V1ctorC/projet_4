@@ -3,10 +3,10 @@
 class CommentManager
 {
 	
-	function getComments($postId)
+	public function getComments($postId)
 	{
 
-	$db = dbConnect();
+	$db = $this->dbConnect();
 	$comments = $db->prepare('SELECT comment_id, comment_content, comment_date, id, user_id FROM comments WHERE id = ? ORDER BY comment_date DESC');
 	$comments->execute(array($postId));
 
@@ -14,9 +14,9 @@ class CommentManager
 
 	}
 
-	function postComment($postId, $author, $comment)
+	public function postComment($postId, $author, $comment)
 	{
-    $db = dbConnect();
+    $db = $this->dbConnect();
     $comments = $db->prepare('INSERT INTO comments(id, user_id, comment_content, comment_date) VALUES(?, ?, ?, NOW())');
     $affectedLines = $comments->execute(array($postId, $author, $comment));
 
