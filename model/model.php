@@ -34,7 +34,7 @@ function getComments($postId)
 function postComment($postId, $author, $comment)
 {
     $db = dbConnect();
-    $comments = $db->prepare('INSERT INTO comments(id, user_name, comment_content, comment_date) VALUES(?, ?, ?, NOW())');
+    $comments = $db->prepare('INSERT INTO comments(id, user_id, comment_content, comment_date) VALUES(?, ?, ?, NOW())');
     $affectedLines = $comments->execute(array($postId, $author, $comment));
 
     return $affectedLines;
