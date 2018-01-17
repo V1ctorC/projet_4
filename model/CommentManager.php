@@ -7,7 +7,7 @@ class CommentManager
 	{
 
 	$db = $this->dbConnect();
-	$comments = $db->prepare('SELECT comment_id, comment_content, comment_date, id, user_id FROM comments WHERE id = ? ORDER BY comment_date DESC');
+	$comments = $db->prepare('SELECT comment_id, comment_content, id, user_id, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date FROM comments WHERE id = ? ORDER BY comment_date DESC');
 	$comments->execute(array($postId));
 
 	return $comments;
