@@ -39,7 +39,7 @@ class CommentManager extends Manager
 		$db = $this->dbConnect();
 		$comment = $db->prepare('SELECT comment_id, comment_content, id, user_id, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date FROM comments WHERE id = ?');
 		$comment->execute(array($commentId));
-		$commentA = $req->fetch();
+		$commentA = $comment->fetch();
 
 		return $commentA;
 	}

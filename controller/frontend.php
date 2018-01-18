@@ -37,7 +37,7 @@ function addComment($postId, $author, $comment)
     }
 }
 
-function edit($postId, $newComment)
+function edit($commentId, $newComment)
 {
 	$commentManager = new CommentManager;
 
@@ -48,8 +48,17 @@ function edit($postId, $newComment)
 		
 	}
 	else {
-		header('Location: index.php?action=post&id='.$postId);
+		header('Location: index.php?action=post&id='.$commentId);
 	}
+
+	require('view/frontend/editComment.php');
+}
+
+function comment()
+{
+	$commentManager = new CommentManager;
+
+	$commentA = $commentManager->getComment($_GET['comment_id']);
 
 	require('view/frontend/editComment.php');
 }
