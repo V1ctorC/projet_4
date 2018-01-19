@@ -35,6 +35,8 @@ function addComment($postId, $author, $comment)
     else {
         header('Location: index.php?action=post&id=' . $postId);
     }
+
+    require('view/frontend/editComment.php');
 }
 
 function edit($commentId, $newComment)

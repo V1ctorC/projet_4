@@ -31,12 +31,16 @@ try{
         }
         elseif ($_GET['action'] == 'editComment') {
             if (isset($_GET['comment_id']) && $_GET['comment_id'] > 0) {
-                echo "coucou";
                 comment();
             }
             else {
                 throw new Exception("Erreur : identifiant commentaire inconnu");
                 
+            }
+        }
+        elseif ($_GET['action'] == 'edit') {
+            if (isset($_GET['comment_id']) && $_GET['comment_id'] > 0) {
+                edit($_GET['comment_id'], $_POST['newComment']);
             }
         }
     }
