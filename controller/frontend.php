@@ -39,18 +39,18 @@ function addComment($postId, $author, $comment)
     require('view/frontend/editComment.php');
 }
 
-function edit($commentId, $newComment)
+function edit($newComment, $commentId)
 {
 	$commentManager = new CommentManager;
 
-	$affectedLines = $commentManager->editComment($commentId, $newComment);
+	$affectedLines = $commentManager->editComment($newComment, $commentId);
 
 	if ($affectedLines === false) {
 		throw new Exception("Impossible de modifier le commentaire");
 		
 	}
 	else {
-		header('Location: index.php?action=post&id='.$commentId);
+		header('Location: index.php');
 	}
 
 	require('view/frontend/editComment.php');

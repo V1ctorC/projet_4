@@ -12,7 +12,7 @@
 <h3>Vous souhaitez le modifier par :</h3>
 
 
-<form action="index.php?action=edit&amp;comment_id=<?= $comment['comment_id'] ?>" method="post">
+<form action="index.php?action=edit&amp;comment_id=<?= $commentA['comment_id'] ?>" method="post">
     <div>
         <label for="comment">Modifier le commentaire</label><br />
         <textarea id="comment" name="newComment"><?= htmlspecialchars($commentA['comment_content']) ?></textarea>

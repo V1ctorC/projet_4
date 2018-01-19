@@ -25,11 +25,11 @@ class CommentManager extends Manager
 	    return $affectedLines;
 	}
 
-	public function editComment($commentId, $newComment)
+	public function editComment($newComment, $commentId)
 	{
 		$db = $this->dbConnect();
 		$comments = $db->prepare('UPDATE comments SET comment_content = ? WHERE comment_id = ?');
-		$affectedLines = $comments->execute(array($commentId, $newComment));
+		$affectedLines = $comments->execute(array($newComment, $commentId));
 
 		return $affectedLines;
 	}

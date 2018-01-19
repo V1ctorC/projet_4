@@ -42,7 +42,7 @@ try{
             if (isset($_GET['comment_id']) && $_GET['comment_id'] > 0) {
                
                 if (!empty($_POST['newComment'])) {
-                    edit($_GET['comment_id'], $_POST['newComment']);
+                    edit($_POST['newComment'], $_GET['comment_id']);
                 }
                 else {
                     throw new Exception("Le champs n'est pas remplis");                   
