@@ -40,7 +40,16 @@ try{
         }
         elseif ($_GET['action'] == 'edit') {
             if (isset($_GET['comment_id']) && $_GET['comment_id'] > 0) {
-                edit($_GET['comment_id'], $_POST['newComment']);
+               
+                if (!empty($_POST['newComment'])) {
+                    edit($_GET['comment_id'], $_POST['newComment']);
+                }
+                else {
+                    throw new Exception("Le champs n'est pas remplis");                   
+                }
+            }
+            else {
+                throw new Exception("Erreur : Identifiant du commentaire non valide");           
             }
         }
     }
