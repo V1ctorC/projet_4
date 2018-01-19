@@ -7,6 +7,8 @@
     </head>
         
     <body>
+    	<a href="http://localhost:8888/Projet/projet_4/index.php">Retour a l'acceuil</a>
+    	<a href="http://localhost:8888/Projet/projet_4/view/frontend/connect.php">Connexion</a>
         <?= $content ?>
     </body>
 </html>
