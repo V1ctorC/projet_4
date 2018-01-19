@@ -2,6 +2,7 @@
 
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
+require_once('model/UserManager.php');
 
 function listPosts()
 {
@@ -63,4 +64,21 @@ function comment()
 	$commentA = $commentManager->getComment($_GET['comment_id']);
 
 	require('view/frontend/editComment.php');
+}
+
+function create($mail, $pseudo, $password)
+{
+	$userManager = new UserManager;
+
+	$affectedLines = $userManager->createUser($mail, $pseudo, $password);
+
+	if ($affectedLines === false) {
+		throw new Exception("Impossible de vous inscrire");
+		
+	} else {
+		header('Location : index.php');
+	}
+
+
+	require ('view/frontend/registration.php');
 }

@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 <h1>Créer un nouveau compte</h1>
 
-<form action="" method="post">
+<form action="../../index.php?action=create" method="post">
     <div>
         <label for="mail">Adresse e-mail</label><br />
         <input type="email" name="mail" id="mail">
@@ -16,10 +16,10 @@
     	<label for="password">Mot de passe</label><br />
     	<input type="password" name="password" id="password">
     </div>
-    <div>
+    <!--<div>
         <label for="passwordConfirm">Mot de passe (confirmation)</label><br />
         <input type="password" name="passwordConfirm" id="passwordConfirm">
-    </div>
+    </div>-->
     <div>
         <input type="submit" />
     </div>
