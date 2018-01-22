@@ -82,3 +82,17 @@ function create($mail, $pseudo, $password)
 
 	require ('view/frontend/registration.php');
 }
+
+function connect($mail, $password)
+{
+	$userManager = new UserManager;
+
+	$affectedLines = $userManager->connectUser($mail, $password);
+
+	if ($affectedLines === false) {
+		throw new Exception("Impossible de vous connecter");
+		
+	} else {
+		header('Location : index.php');
+	}
+}

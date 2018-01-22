@@ -16,7 +16,7 @@ class UserManager extends Manager
 
 	public function connectUser($mail, $password)
 	{
-		$db = this->dbConnect();
+		$db = $this->dbConnect();
 		$req = $db->prepare('SELECT user_id, user_name FROM user WHERE user_name = ? AND user_password = ?');
 		$affectedLines = $req->execute(array($mail, $password));
 
