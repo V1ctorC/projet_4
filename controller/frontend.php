@@ -93,8 +93,11 @@ function connect($mail, $password)
 		throw new Exception("Identifiant ou mot de passe incorrect");
 		
 	} else {
-		echo "c'est ok";
-		header('Location : index.php');
+		session_start();
+    	$_SESSION['user_id'] = $log['user_id'];
+    	$_SESSION['user_name'] = $log['user_name'];
+
+		header('Location: index.php');
 	}
 
 	require ('view/frontend/connect.php');
