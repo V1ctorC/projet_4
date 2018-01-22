@@ -4,7 +4,7 @@
 <h1>Se connecter à son compte</h1>
 
 
-<form action="" method="post">
+<form action="../../index.php?action=connect" method="post">
     <div>
         <label for="mail">Adresse e-mail</label><br />
         <input type="email" name="mail" id="mail">
