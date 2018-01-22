@@ -61,6 +61,15 @@ try{
                 
             }
         }
+        elseif ($_GET['action'] == 'connect'){
+            if (!empty($_POST['mail']) && !empty($_POST['password'])) {
+                connect($_POST['mail'], $_POST['password']);
+            }
+            else {
+                throw new Exception("Tous les champs ne sont pas remplis");
+                
+            }
+        }
     }
     else {
         listPosts();

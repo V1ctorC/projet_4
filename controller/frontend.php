@@ -87,12 +87,15 @@ function connect($mail, $password)
 {
 	$userManager = new UserManager;
 
-	$affectedLines = $userManager->connectUser($mail, $password);
+	$log = $userManager->connectUser($mail, $password);
 
-	if ($affectedLines === false) {
-		throw new Exception("Impossible de vous connecter");
+	if (!$log) {
+		throw new Exception("Identifiant ou mot de passe incorrect");
 		
 	} else {
+		echo "c'est ok";
 		header('Location : index.php');
 	}
+
+	require ('view/frontend/connect.php');
 }
