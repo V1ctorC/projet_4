@@ -14,7 +14,7 @@ class UserManager extends Manager
 		return $affectedLines;
 	}
 
-	public function connectUser($mail, $password)
+	/*public function connectUser($mail, $password)
 	{
 		$db = $this->dbConnect();
 		$req = $db->prepare('SELECT user_id, user_name FROM user WHERE user_mail = ? AND user_password = ?');
@@ -22,7 +22,7 @@ class UserManager extends Manager
 		$log = $req->fetch();
 
 		return $log;
-	}
+	}*/
 
 	public function verifPseudo($pseudo)
 	{
@@ -42,6 +42,16 @@ class UserManager extends Manager
 		$verif = $req->fetch();
 
 		return $verif;
+	}
+
+	public function hashPassword($mail)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('SELECT user_id, user_name, user_password FROM user WHERE user_mail = ?');
+		$req->execute(array($mail));
+		$hash = $req->fetch();
+
+		return $hash;
 	}
 
 }

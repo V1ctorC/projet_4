@@ -85,6 +85,8 @@ function create($mail, $pseudo, $password, $verifPassword)
 
 		       		if ($password === $verifPassword) {
 
+		       			$password = password_hash($password, PASSWORD_DEFAULT);
+
 			       		$affectedLines = $userManager->createUser($mail, $pseudo, $password);
 
 						if ($affectedLines === false) {
@@ -120,10 +122,10 @@ function create($mail, $pseudo, $password, $verifPassword)
 	require ('view/frontend/registration.php');
 }
 
-function connect($mail, $password)
+/*function connect($mail, $password)
 {
 	$userManager = new UserManager;
-
+	
 	$log = $userManager->connectUser($mail, $password);
 
 	if (!$log) {
@@ -139,6 +141,33 @@ function connect($mail, $password)
 	}
 
 	require ('view/frontend/connect.php');
+}*/
+
+function connect($mail, $password)
+{
+	$userManager = new UserManager;
+
+	$hash = $userManager->hashPassword($mail);
+	$secure = $hash['user_password'];
+	if (isset($secure)) {
+		if (password_verify($password, $secure)) {
+			session_start();
+	    	$_SESSION['user_id'] = $hash['user_id'];
+	    	$_SESSION['user_name'] = $hash['user_name'];
+	    	setcookie('pseudo', $hash['user_name'], time() + 365*24*3600, null, null, false, true);
+
+			header('Location: index.php');
+	 	} else {
+	 		throw new Exception("Mot de passe incorrect");
+	 	
+		};
+	} else {
+		throw new Exception("L'adresse " . $mail . " n'a pas de compte");
+		
+	}
+
+	require ('view/frontend/connect.php');
+	
 }
 
 function disconnect()
