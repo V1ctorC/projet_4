@@ -70,8 +70,8 @@ function create($mail, $pseudo, $password)
 {
 	if (isset($mail))
 	{
-	    $mail = htmlspecialchars($mail); // On rend inoffensives les balises HTML que le visiteur a pu rentrer
-
+	    $mail = htmlspecialchars($mail);
+	    
 	    if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $mail))
 	    {
 	       $userManager = new UserManager;

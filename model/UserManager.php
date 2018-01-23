@@ -34,4 +34,14 @@ class UserManager extends Manager
 		return $verif;
 	}
 
+	public function verifMail($mail)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('SELECT user_mail FROM user WHERE user_mail = ?');
+		$req->execute(array($mail));
+		$verif = $req->fetch();
+
+		return $verif;
+	}
+
 }
