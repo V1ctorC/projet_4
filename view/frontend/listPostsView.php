@@ -5,6 +5,7 @@
 <p>Derniers billets du blog :</p>
 
 
+
 <?php
 while ($data = $posts->fetch())
 {

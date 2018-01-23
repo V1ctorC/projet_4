@@ -96,6 +96,7 @@ function connect($mail, $password)
 		session_start();
     	$_SESSION['user_id'] = $log['user_id'];
     	$_SESSION['user_name'] = $log['user_name'];
+    	setcookie('pseudo', $log['user_name'], time() + 365*24*3600, null, null, false, true);
 
 		header('Location: index.php');
 	}
