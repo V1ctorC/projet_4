@@ -68,15 +68,27 @@ function comment()
 
 function create($mail, $pseudo, $password)
 {
-	$userManager = new UserManager;
+	if (isset($mail))
+	{
+	    $mail = htmlspecialchars($mail); // On rend inoffensives les balises HTML que le visiteur a pu rentrer
 
-	$affectedLines = $userManager->createUser($mail, $pseudo, $password);
+	    if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $mail))
+	    {
+	       $userManager = new UserManager;
 
-	if ($affectedLines === false) {
-		throw new Exception("Impossible de vous inscrire");
-		
-	} else {
-		header('Location : index.php');
+			$affectedLines = $userManager->createUser($mail, $pseudo, $password);
+
+			if ($affectedLines === false) {
+				throw new Exception("Impossible de vous inscrire");
+				
+			} else {
+				header('Location : index.php');
+			}
+	    }
+	    else
+	    {
+	        throw new Exception( "L'adresse " . $mail . " n'est pas valide, recommencez !");
+	    }
 	}
 
 
