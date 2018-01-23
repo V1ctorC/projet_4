@@ -103,3 +103,11 @@ function connect($mail, $password)
 
 	require ('view/frontend/connect.php');
 }
+
+function disconnect()
+{
+	setcookie('pseudo', '');
+
+	header('Location: index.php');
+
+}

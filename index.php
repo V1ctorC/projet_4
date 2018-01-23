@@ -70,6 +70,14 @@ try{
                 
             }
         }
+        elseif ($_GET['action'] == 'disconnect'){
+            if (isset($_COOKIE['pseudo'])) {
+                disconnect();
+            }
+            else {
+                throw new Exception("Vous n'êtes pas connecté");          
+            }
+        }
     }
     else {
         listPosts();
