@@ -71,7 +71,7 @@ function create($mail, $pseudo, $password)
 	if (isset($mail))
 	{
 	    $mail = htmlspecialchars($mail);
-	    
+
 	    if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $mail))
 	    {
 	       $userManager = new UserManager;
@@ -79,19 +79,28 @@ function create($mail, $pseudo, $password)
 
 	       if ($verif === false) {
 
-		       	$affectedLines = $userManager->createUser($mail, $pseudo, $password);
+		       	$verif = $userManager->verifMail($mail);
 
-				if ($affectedLines === false) {
-					throw new Exception("Impossible de vous inscrire");
-					
-				} else {
-					header('Location : index.php');
-				}
+		       	if ($verif === false) {
+		       		
+		       		$affectedLines = $userManager->createUser($mail, $pseudo, $password);
+
+					if ($affectedLines === false) {
+						throw new Exception("Impossible de vous inscrire");
+						
+					} else {
+						header('Location : index.php');
+					}
+
+		       	} else {
+		       		throw new Exception("Vous possedez déjà un compte utilisateur");
+		       		
+		       	}
+
 	       } else {
 	       	throw new Exception("Votre pseudo est déjà utilisé");
 	       	
 	       }
-
 			
 	    }
 	    else
