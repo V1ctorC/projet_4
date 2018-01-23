@@ -24,4 +24,14 @@ class UserManager extends Manager
 		return $log;
 	}
 
+	public function verifPseudo($pseudo)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('SELECT user_name FROM user WHERE user_name = ?');
+		$req->execute(array($pseudo));
+		$verif = $req->fetch();
+
+		return $verif;
+	}
+
 }

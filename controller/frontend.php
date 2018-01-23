@@ -75,15 +75,24 @@ function create($mail, $pseudo, $password)
 	    if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $mail))
 	    {
 	       $userManager = new UserManager;
+	       $verif = $userManager->verifPseudo($pseudo);
 
-			$affectedLines = $userManager->createUser($mail, $pseudo, $password);
+	       if ($verif === false) {
 
-			if ($affectedLines === false) {
-				throw new Exception("Impossible de vous inscrire");
-				
-			} else {
-				header('Location : index.php');
-			}
+		       	$affectedLines = $userManager->createUser($mail, $pseudo, $password);
+
+				if ($affectedLines === false) {
+					throw new Exception("Impossible de vous inscrire");
+					
+				} else {
+					header('Location : index.php');
+				}
+	       } else {
+	       	throw new Exception("Votre pseudo est déjà utilisé");
+	       	
+	       }
+
+			
 	    }
 	    else
 	    {
