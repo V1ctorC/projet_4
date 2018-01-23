@@ -66,7 +66,7 @@ function comment()
 	require('view/frontend/editComment.php');
 }
 
-function create($mail, $pseudo, $password)
+function create($mail, $pseudo, $password, $verifPassword)
 {
 	if (isset($mail))
 	{
@@ -82,16 +82,23 @@ function create($mail, $pseudo, $password)
 		       	$verif = $userManager->verifMail($mail);
 
 		       	if ($verif === false) {
+
+		       		if ($password === $verifPassword) {
+
+			       		$affectedLines = $userManager->createUser($mail, $pseudo, $password);
+
+						if ($affectedLines === false) {
+							throw new Exception("Impossible de vous inscrire");
+							
+						} else {
+							header('Location : index.php');
+						}
 		       		
-		       		$affectedLines = $userManager->createUser($mail, $pseudo, $password);
-
-					if ($affectedLines === false) {
-						throw new Exception("Impossible de vous inscrire");
-						
-					} else {
-						header('Location : index.php');
-					}
-
+		       		} else {
+		       			throw new Exception("Les mots de passe ne sont pas identiques");
+		       			
+		       		}
+		       			
 		       	} else {
 		       		throw new Exception("Vous possedez déjà un compte utilisateur");
 		       		

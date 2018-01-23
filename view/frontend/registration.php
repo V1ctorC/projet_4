@@ -16,10 +16,10 @@
     	<label for="password">Mot de passe</label><br />
     	<input type="password" name="password" id="password">
     </div>
-    <!--<div>
-        <label for="passwordConfirm">Mot de passe (confirmation)</label><br />
-        <input type="password" name="passwordConfirm" id="passwordConfirm">
-    </div>-->
+    <div>
+        <label for="verifPassword">Mot de passe (confirmation)</label><br />
+        <input type="password" name="verifPassword" id="verifPassword">
+    </div>
     <div>
         <input type="submit" />
     </div>

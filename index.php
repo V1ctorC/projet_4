@@ -53,8 +53,8 @@ try{
             }
         }
         elseif ($_GET['action'] == 'create') {
-            if (!empty($_POST['mail']) && !empty($_POST['pseudo']) && !empty($_POST['password'])) {
-                create($_POST['mail'], $_POST['pseudo'], $_POST['password']);
+            if (!empty($_POST['mail']) && !empty($_POST['pseudo']) && !empty($_POST['password']) && !empty($_POST['verifPassword'])) {
+                create($_POST['mail'], $_POST['pseudo'], $_POST['password'], $_POST['verifPassword']);
             }
             else {
                 throw new Exception("Tous les champs ne sont pas remplis");
