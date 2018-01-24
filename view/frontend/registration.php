@@ -14,7 +14,7 @@
     </div>
     <div>
     	<label for="password">Mot de passe</label><br />
-    	<input type="password" name="password" id="password">
+    	<input type="password" name="password" id="password" onfocus="Mot de passse">
     </div>
     <div>
         <label for="verifPassword">Mot de passe (confirmation)</label><br />

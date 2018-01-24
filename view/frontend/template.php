@@ -18,5 +18,7 @@
              <a href="http://localhost:8888/Projet/projet_4/view/frontend/connect.php">Connexion</a>
         <?php }
         echo $content ?>
+
+</script>
     </body>
 </html>
