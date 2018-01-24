@@ -21,7 +21,6 @@
 
         <footer>
             <a href="http://localhost:8888/Projet/projet_4/view/backend/administration.php">Administration du site</a>
-            <p>2018 - OpenClassrooms</p>
         </footer>
     </body>
 </html>
