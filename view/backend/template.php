@@ -8,16 +8,8 @@
         
     <body>
     	<a href="http://localhost:8888/Projet/projet_4/index.php">Acceuil</a> <br />
-        <a href="http://localhost:8888/Projet/projet_4/view/frontend/registration.php">S'inscrire</a> <br />
-        <?php
-        if (isset($_COOKIE['pseudo'])) {
-            echo 'Bonjour ' . $_COOKIE['pseudo']; ?>
-            <br /> <a href="index.php?action=disconnect">Deconnexion</a> <?php
 
-        } else { ?>
-             <a href="http://localhost:8888/Projet/projet_4/view/frontend/connect.php">Connexion</a>
-        <?php }
-        echo $content ?>
+        <?php echo $content ?>
 
         <footer>
             <a href="http://localhost:8888/Projet/projet_4/view/backend/administration.php">Administration du site</a>

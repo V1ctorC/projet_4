@@ -1,6 +1,7 @@
 body 
 {
-    background-color: #FAFAFA;
+   background-color: #FAFAFA;
+   margin: 0;
 }
 
 
@@ -30,4 +31,13 @@ a
 {
     text-decoration: none;
     color: blue;
+}
+
+footer
+{
+    background-color: grey;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+
 }
