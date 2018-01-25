@@ -54,4 +54,12 @@ class UserManager extends Manager
 		return $hash;
 	}
 
+	public function adminAccount($mail)
+	{
+		$db = $this->dbConnect();
+		
+	}
+
+
+
 }

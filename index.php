@@ -79,6 +79,11 @@ try{
                 throw new Exception("Vous n'êtes pas connecté");          
             }
         }
+
+        elseif ($_GET['action'] == 'admin') 
+        {
+            admin();
+        }
     }
     else {
         listPosts();
