@@ -6,6 +6,26 @@
 <div id="content">
     <div id="posts">
         <h2>posts</h2>
+        <?php
+        while ($data = $posts->fetch())
+        {
+        ?>
+            <div class="news">
+                <h3>
+                    <?= htmlspecialchars($data['post_title']) ?>
+                    <em>le <?= $data['post_dateAdd'] ?></em>
+                </h3>
+        
+                <p>
+                    <?= nl2br(htmlspecialchars($data['post_content'])) ?>
+                    <br />
+                    <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
+                </p>
+            </div>
+        <?php
+        }
+        $posts->closeCursor();
+        ?>
     </div>
     <div id="comments">
         <h2>comments</h2>

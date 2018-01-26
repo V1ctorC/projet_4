@@ -9,7 +9,9 @@ function admin()
 	require('view/backend/administration.php');
 }
 
-function adminConnect()
+function adminListPosts()
 {
-	
+	$postManager = new PostManager;
+    $posts = $postManager->getPosts();
+    require('view/backend/administration.php');
 }
