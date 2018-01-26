@@ -6,6 +6,7 @@
 <div id="content">
     <div id="posts">
         <h2>posts</h2>
+        <a href="index.php?action=add">Ajouter un article</a>
         <?php
         while ($data = $posts->fetch())
         {
