@@ -41,6 +41,8 @@ function delete($postId)
 	}
 	else 
 	{
+        $commentManager = new CommentManager;
+        $comment = $commentManager->deleteComment($postId);
         header('Location: index.php?action=admin');
     }
 	require('view/backend/administration.php');
