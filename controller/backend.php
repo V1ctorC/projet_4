@@ -63,3 +63,13 @@ function deleteComment($commentId)
 	}
 	
 }
+
+function postAlone($postId)
+{
+	$postManager = new PostManager;
+
+    $post = $postManager->getPost($_GET['id']);
+
+    require('view/backend/editPost.php');
+
+}

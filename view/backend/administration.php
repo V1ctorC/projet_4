@@ -37,6 +37,7 @@
                     <?= nl2br(htmlspecialchars($data['post_content'])) ?>
                     <br />
                     <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
+                    <em><a href="index.php?action=editPost&amp;id=<?= $data['id'] ?>">Editer</a></em>
                     <em><a href="index.php?action=delete&amp;id=<?= $data['id'] ?>">Supprimer</a></em>
                 </p>
             </div>

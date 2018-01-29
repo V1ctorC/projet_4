@@ -118,6 +118,17 @@ try{
                 
             }
         }
+        elseif ($_GET['action'] == 'editPost')
+        {
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) 
+            {
+                postAlone($_GET['id']);
+            }   
+            else
+            {
+                throw new Exception("Erreur : L'identifiant du billet est incorrect");
+            }
+        }
     }
     else {
         listPosts();
