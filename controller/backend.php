@@ -30,7 +30,7 @@ function add($title, $content)
 	require('view/backend/administration.php');
 }
 
-function delete($postId)
+function deletePost($postId)
 {
 	$postManager = new PostManager;
 	$post = $postManager->deletePost($postId);
@@ -42,8 +42,24 @@ function delete($postId)
 	else 
 	{
         $commentManager = new CommentManager;
-        $comment = $commentManager->deleteComment($postId);
+        $comment = $commentManager->deleteCommentPost($postId);
         header('Location: index.php?action=admin');
     }
 	require('view/backend/administration.php');
+}
+
+function deleteComment($commentId)
+{
+	$commentManager = new CommentManager;
+	$comment = $commentManager->deleteComment($commentId);
+
+	if ($comment === false)
+	{
+		throw new Exception("Impossible de supprimer le commentaire");		
+	}
+	else
+	{
+		header('Location: index.php?action=admin');
+	}
+	
 }

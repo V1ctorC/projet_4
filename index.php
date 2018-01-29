@@ -99,11 +99,23 @@ try{
         {
             if (isset($_GET['id']) && ($_GET['id'] > 0)) 
             {
-                delete($_GET['id']);
+                deletePost($_GET['id']);
             }
             else
             {
                 throw new Exception("Erreur : identifiant billet inconnu");            
+            }
+        }
+        elseif ($_GET['action'] == 'deleteComment')
+        {
+            if (isset($_GET['comment_id']) && ($_GET['comment_id'] > 0)) 
+            {
+                deleteComment($_GET['comment_id']);
+            }
+            else
+            {
+                throw new Exception("Erreur : L'identifiant du commentaire est incorrect");
+                
             }
         }
     }
