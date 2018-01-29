@@ -95,6 +95,17 @@ try{
                 throw new Exception("Erreur : tous les champs ne sont pas remplis !");
             }
         }
+        elseif ($_GET['action'] == 'delete')
+        {
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) 
+            {
+                delete($_GET['id']);
+            }
+            else
+            {
+                throw new Exception("Erreur : identifiant billet inconnu");            
+            }
+        }
     }
     else {
         listPosts();
