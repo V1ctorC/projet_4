@@ -20,7 +20,7 @@
         echo $content ?>
 
         <footer>
-            <a href="http://localhost:8888/Projet/projet_4/view/backend/administration.php">Administration du site</a>
+            <a href="index.php?action=admin">Administration du site</a>
         </footer>
     </body>
 </html>

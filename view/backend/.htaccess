@@ -1,4 +1,0 @@
-AuthName "Page d'administration protégée"
-AuthType Basic
-AuthUserFile "/Users/VictorChevalier/Documents/PHP/Projet/projet_4/view/backend/.htpasswd"
-Require valid-user

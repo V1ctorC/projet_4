@@ -25,12 +25,11 @@ class PostManager extends Manager
 		return $post;
 	}
 
-	public function addPost($title, $content, $date)
+	public function addPost($title, $content)
 	{
 		$db = $this->dbConnect();
 		$req = $db->prepare('INSERT INTO posts(post_title, post_content, post_dateAdd) VALUES (?, ?, NOW())');
-		$req->execute(array($title, $content, $date));
-		$post = $req->fetch();
+		$post = $req->execute(array($title, $content));
 
 		return $post;
 	}
@@ -42,5 +41,12 @@ class PostManager extends Manager
 		$affectedLines = $req->execute(array($newTitle, $newContent, $newDate, $postId));
 
 		return $affectedLines;
+	}
+
+	public function deletePost($postId)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('DELETE FROM posts WHERE id = ?');
+		$affectedLines = $req->execute(array($postId));
 	}
 }

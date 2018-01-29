@@ -83,6 +83,18 @@ try{
         {
             adminListPosts();
         }
+
+        elseif ($_GET['action'] == 'addPost')
+        {
+            if (!empty($_POST['title']) && !empty($_POST['content'])) 
+            {
+                    add($_POST['title'], $_POST['content']);
+            }
+            else 
+            {
+                throw new Exception("Erreur : tous les champs ne sont pas remplis !");
+            }
+        }
     }
     else {
         listPosts();

@@ -6,7 +6,23 @@
 <div id="content">
     <div id="posts">
         <h2>posts</h2>
-        <a href="index.php?action=add">Ajouter un article</a>
+        <div id="addArticle">
+            <!--<a href="index.php?action=add">Ajouter un article</a>-->
+            <form action="index.php?action=addPost" method="post">
+            <div>
+                <label for="title">Titre</label><br />
+                <input type="text" id="title" name="title" />
+                </div>
+            <div>
+                <label for="content">Contenu</label><br />
+                <textarea id="content" name="content"></textarea>
+            </div>
+            <div>
+                <input type="submit" />
+            </div>
+            </form>
+        </div>
+        
         <?php
         while ($data = $posts->fetch())
         {
@@ -21,6 +37,7 @@
                     <?= nl2br(htmlspecialchars($data['post_content'])) ?>
                     <br />
                     <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
+                    <em><a href="index.php?action=delete"></a></em>
                 </p>
             </div>
         <?php
