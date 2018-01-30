@@ -148,6 +148,17 @@ try{
                 throw new Exception("Erreur : L'identifiant du billet est incorrect");
             }
         }
+        elseif ($_GET['action'] == 'reportComment')
+        {
+            if (isset($_GET['comment_id']) && ($_GET['comment_id'] > 0)) 
+            {
+                reportComment($_GET['comment_id']);
+            }
+            else
+            {
+                throw new Exception("Erreur : L'identifiant du commentaire est incorrect");
+            }
+        }
     }
     else {
         listPosts();

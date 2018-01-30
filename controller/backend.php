@@ -77,7 +77,6 @@ function postAlone($postId)
 function editPost($newTitle, $newContent, $postId)
 {
 	$postManager = new PostManager;
-
 	$affectedLines = $postManager->editPost($newTitle, $newContent, $postId);
 
 	if ($affectedLines === false) 
@@ -89,4 +88,19 @@ function editPost($newTitle, $newContent, $postId)
 		header('Location: index.php?action=admin');
 	}
 
+}
+
+function reportComment($commentId)
+{
+	$commentManager = new CommentManager;
+	$affectedLines = $commentManager->reportComment($commentId);
+
+	if ($affectedLines === false) 
+	{
+		throw new Exception("Erreur : Signalement du commentaire impossible");
+	}
+	else
+	{
+		header('Location: index.php');
+	}
 }
