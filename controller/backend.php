@@ -73,3 +73,19 @@ function postAlone($postId)
     require('view/backend/editPost.php');
 
 }
+
+function editPost($newTitle, $newContent, $postId)
+{
+	$postManager = new PostManager;
+
+	$post = $postManager->editPost($newTitle, $newContent, $postId);
+
+	/*if ($affectedLines === false) 
+	{
+		throw new Exception("Erreur : impossible de modifier l'article");
+	}
+	else
+	{
+		header('Location : index.php?action=admin');
+	}*/
+}

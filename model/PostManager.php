@@ -34,11 +34,11 @@ class PostManager extends Manager
 		return $post;
 	}
 
-	public function editPost($newTitle, $newContent, $newDate, $postId)
+	public function editPost($newTitle, $newContent, $postId)
 	{
 		$db = $this->dbConnect();
 		$req = $db->prepare('UPDATE posts SET post_title = ?, post_content = ?, post_dateModif = NOW() WHERE id = ?');
-		$affectedLines = $req->execute(array($newTitle, $newContent, $newDate, $postId));
+		$affectedLines = $req->execute(array($newTitle, $newContent, $postId));
 
 		return $affectedLines;
 	}

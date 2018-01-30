@@ -118,12 +118,31 @@ try{
                 
             }
         }
-        elseif ($_GET['action'] == 'editPost')
+        elseif ($_GET['action'] == 'postAlone')
         {
             if (isset($_GET['id']) && ($_GET['id'] > 0)) 
             {
                 postAlone($_GET['id']);
             }   
+            else
+            {
+                throw new Exception("Erreur : L'identifiant du billet est incorrect");
+            }
+        }
+        elseif ($_GET['action'] == 'editPost')
+        {
+            if (isset($_GET['id']) && ($_GET['id'] > 0))
+            {
+                if (!empty($_POST['newTitle']) && !empty($_POST['newContent']))
+                {
+                    editPost($_POST['newTitle'], $_POST['newContent'], $_GET['id']);
+                }
+                else
+                {
+                    throw new Exception("Erreur : Tous les champs ne sont pas remplis");
+                    
+                }
+            }
             else
             {
                 throw new Exception("Erreur : L'identifiant du billet est incorrect");
