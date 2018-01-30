@@ -163,6 +163,16 @@ try{
         {
             adminListComments();
         }
+        elseif ($_GET['action'] == 'ignoreComment')
+            if (isset($_GET['comment_id']) && ($_GET['comment_id'] > 0)) 
+            {
+                ignoreComment($_GET['comment_id']);
+            }
+            else
+            {
+                throw new Exception("Erreur : L'indentifiant du commentaire est incorrect");
+                
+            }
     }
     else {
         listPosts();

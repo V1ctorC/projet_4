@@ -74,4 +74,13 @@ class CommentManager extends Manager
 
 		return $req;
 	}
+
+	public function ignoreComment($commentId)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('UPDATE comments SET comment_report = 0 WHERE comment_id = ?');
+		$affectedLines = $req->execute(array($commentId));
+
+		return $affectedLines;
+	}
 }

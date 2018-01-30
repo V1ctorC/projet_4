@@ -111,3 +111,18 @@ function reportComment($commentId)
 		header('Location: index.php');
 	}
 }
+
+function ignoreComment($commentId)
+{
+	$commentManager = new CommentManager;
+	$affectedLines = $commentManager->ignoreComment($commentId);
+
+	if ($affectedLines === false) 
+	{
+		throw new Exception("Erreur : Impossible d'ignorer le commentaire");
+	}
+	else
+	{
+		header('Location: index.php?action=admin');
+	}
+}
