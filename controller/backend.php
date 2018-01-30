@@ -78,14 +78,15 @@ function editPost($newTitle, $newContent, $postId)
 {
 	$postManager = new PostManager;
 
-	$post = $postManager->editPost($newTitle, $newContent, $postId);
+	$affectedLines = $postManager->editPost($newTitle, $newContent, $postId);
 
-	/*if ($affectedLines === false) 
+	if ($affectedLines === false) 
 	{
 		throw new Exception("Erreur : impossible de modifier l'article");
 	}
 	else
 	{
-		header('Location : index.php?action=admin');
-	}*/
+		header('Location: index.php?action=admin');
+	}
+
 }
