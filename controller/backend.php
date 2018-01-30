@@ -16,6 +16,13 @@ function adminListPosts()
     require('view/backend/administration.php');
 }
 
+function adminListComments()
+{
+	$commentManager = new CommentManager;
+	$comments = $commentManager->getReportComment();
+	require('view/backend/reportComment.php');
+}
+
 function add($title, $content)
 {
 	$postManager = new PostManager;

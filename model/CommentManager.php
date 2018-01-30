@@ -61,9 +61,17 @@ class CommentManager extends Manager
 	public function reportComment($commentId)
 	{
 		$db = $this->dbConnect();
-		$comment = $db->prepare('UPDATE comments SET report_comment = report_comment + 1 WHERE comment_id = ?');
+		$comment = $db->prepare('UPDATE comments SET comment_report = comment_report + 1 WHERE comment_id = ?');
 		$affectedLines = $comment->execute(array($commentId));
 
 		return $affectedLines;
+	}
+
+	public function getReportComment()
+	{
+		$db = $this->dbConnect();
+		$req = $db->query('SELECT comment_id, comment_date, comment_content, comment_report FROM comments WHERE comment_report > 0 ORDER BY comment_report DESC LIMIT 0, 5');
+
+		return $req;
 	}
 }

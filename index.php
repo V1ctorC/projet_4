@@ -159,6 +159,10 @@ try{
                 throw new Exception("Erreur : L'identifiant du commentaire est incorrect");
             }
         }
+        elseif ($_GET['action'] == 'moderationComment')
+        {
+            adminListComments();
+        }
     }
     else {
         listPosts();

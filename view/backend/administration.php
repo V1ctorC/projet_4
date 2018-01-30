@@ -2,12 +2,12 @@
 
 <?php ob_start(); ?>
 <h1>Administration du Blog</h1>
+<em><a href="index.php?action=moderationComment">Moderation des commentaires</a></em>
 
 <div id="content">
     <div id="posts">
         <h2>posts</h2>
         <div id="addArticle">
-            <!--<a href="index.php?action=add">Ajouter un article</a>-->
             <form action="index.php?action=addPost" method="post">
             <div>
                 <label for="title">Titre</label><br />
@@ -45,9 +45,6 @@
         }
         $posts->closeCursor();
         ?>
-    </div>
-    <div id="comments">
-        <h2>comments</h2>
     </div>
     
 </div>
