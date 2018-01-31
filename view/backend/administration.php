@@ -34,7 +34,7 @@
                 </h3>
         
                 <p>
-                    <?= nl2br(htmlspecialchars($data['post_content'])) ?>
+                    <?= nl2br($data['post_content']) ?>
                     <br />
                     <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
                     <em><a href="index.php?action=postAlone&amp;id=<?= $data['id'] ?>">Editer</a></em>
