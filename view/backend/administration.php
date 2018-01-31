@@ -14,8 +14,8 @@
                 <input type="text" id="title" name="title" />
                 </div>
             <div>
-                <label for="content">Contenu</label><br />
-                <textarea id="content" name="content"></textarea>
+                <label for="chapter">Contenu</label><br />
+                <textarea id="chapter" name="chapter"></textarea>
             </div>
             <div>
                 <input type="submit" />

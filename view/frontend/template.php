@@ -22,5 +22,8 @@
         <footer>
             <a href="index.php?action=admin">Administration du site</a>
         </footer>
+
+        <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
+        <script src='../../public/js/script.js'></script>
     </body>
 </html>

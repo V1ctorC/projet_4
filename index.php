@@ -86,9 +86,9 @@ try{
 
         elseif ($_GET['action'] == 'addPost')
         {
-            if (!empty($_POST['title']) && !empty($_POST['content'])) 
+            if (!empty($_POST['title']) && !empty($_POST['chapter'])) 
             {
-                    add($_POST['title'], $_POST['content']);
+                    add($_POST['title'], $_POST['chapter']);
             }
             else 
             {
