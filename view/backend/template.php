@@ -13,7 +13,7 @@
     </head>
         
     <body>
-    	<a href="http://localhost:8888/Projet/projet_4/index.php">Acceuil</a> <br />
+    	<a href="http://localhost:8888/Projet/projet_4/index.php">Accueil</a> <br />
 
         <?php echo $content ?>
 
