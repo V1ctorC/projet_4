@@ -47,7 +47,7 @@ class UserManager extends Manager
 	public function hashPassword($mail)
 	{
 		$db = $this->dbConnect();
-		$req = $db->prepare('SELECT user_id, user_name, user_password FROM user WHERE user_mail = ?');
+		$req = $db->prepare('SELECT user_id, user_name, user_password, user_access FROM user WHERE user_mail = ?');
 		$req->execute(array($mail));
 		$hash = $req->fetch();
 
