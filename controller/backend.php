@@ -6,11 +6,14 @@ require_once('model/UserManager.php');
 
 function admin()
 {
-	require('view/backend/administration.php');
+	require('view/backend/administration.php');	
 }
 
 function adminListPosts()
 {
+	if ($_SESSION['user_access'] == "admin") {
+		exit();
+	}
 	$postManager = new PostManager;
     $posts = $postManager->getPosts();
     require('view/backend/administration.php');
