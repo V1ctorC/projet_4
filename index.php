@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('controller/frontend.php');
 require('controller/backend.php');
 
@@ -72,13 +73,18 @@ try{
             }
         }
         elseif ($_GET['action'] == 'disconnect'){
-            if (isset($_COOKIE['pseudo'])) {
+            if (isset($_SESSION['user_name'])) {
                 disconnect();
             }
             else {
                 throw new Exception("Vous n'êtes pas connecté");          
             }
         }
+
+        //////////////////////////////
+        //         ADMIN            //
+        //////////////////////////////
+
         elseif ($_GET['action'] == 'admin')
         {
             adminListPosts();

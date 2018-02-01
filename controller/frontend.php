@@ -151,10 +151,8 @@ function connect($mail, $password)
 	$secure = $hash['user_password'];
 	if (isset($secure)) {
 		if (password_verify($password, $secure)) {
-			session_start();
 	    	$_SESSION['user_id'] = $hash['user_id'];
 	    	$_SESSION['user_name'] = $hash['user_name'];
-	    	setcookie('pseudo', $hash['user_name'], time() + 365*24*3600, null, null, false, true);
 
 			header('Location: index.php');
 	 	} else {
@@ -172,7 +170,7 @@ function connect($mail, $password)
 
 function disconnect()
 {
-	setcookie('pseudo', '');
+	session_destroy();
 
 	header('Location: index.php');
 
