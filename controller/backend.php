@@ -4,6 +4,28 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/UserManager.php');
 
+function access()
+{
+	if (!empty($_SESSION['user_id']))
+	{
+		$userManager = new UserManager;
+		$access = $userManager->access($_SESSION['user_id']);
+
+		if (($access['user_access']) == "admin")
+		{
+
+		}
+		else
+		{
+			throw new Exception("Erreur : Vous n'avez pas les droits d'être ici");			
+		}
+	}
+	else
+	{
+		throw new Exception("Erreur veuillez vous connecter");		
+	}
+}
+
 function admin()
 {
 	require('view/backend/administration.php');	
@@ -11,9 +33,6 @@ function admin()
 
 function adminListPosts()
 {
-	if ($_SESSION['user_access'] == "admin") {
-		exit();
-	}
 	$postManager = new PostManager;
     $posts = $postManager->getPosts();
     require('view/backend/administration.php');
@@ -21,6 +40,7 @@ function adminListPosts()
 
 function adminListComments()
 {
+	
 	$commentManager = new CommentManager;
 	$comments = $commentManager->getReportComment();
 	require('view/backend/reportComment.php');
@@ -28,6 +48,7 @@ function adminListComments()
 
 function add($title, $content)
 {
+	
 	$postManager = new PostManager;
 	$post = $postManager->addPost($title, $content);
 	if ($post === false) {
@@ -42,6 +63,7 @@ function add($title, $content)
 
 function deletePost($postId)
 {
+	
 	$postManager = new PostManager;
 	$post = $postManager->deletePost($postId);
 
@@ -60,6 +82,7 @@ function deletePost($postId)
 
 function deleteComment($commentId)
 {
+
 	$commentManager = new CommentManager;
 	$comment = $commentManager->deleteComment($commentId);
 
@@ -76,6 +99,7 @@ function deleteComment($commentId)
 
 function postAlone($postId)
 {
+
 	$postManager = new PostManager;
 
     $post = $postManager->getPost($_GET['id']);
@@ -86,6 +110,7 @@ function postAlone($postId)
 
 function editPost($newTitle, $newContent, $postId)
 {
+
 	$postManager = new PostManager;
 	$affectedLines = $postManager->editPost($newTitle, $newContent, $postId);
 
@@ -102,6 +127,7 @@ function editPost($newTitle, $newContent, $postId)
 
 function reportComment($commentId)
 {
+
 	$commentManager = new CommentManager;
 	$affectedLines = $commentManager->reportComment($commentId);
 
@@ -117,6 +143,7 @@ function reportComment($commentId)
 
 function ignoreComment($commentId)
 {
+
 	$commentManager = new CommentManager;
 	$affectedLines = $commentManager->ignoreComment($commentId);
 

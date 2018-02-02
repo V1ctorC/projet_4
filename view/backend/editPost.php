@@ -9,7 +9,7 @@
 <p><strong>Le chapitre actuel est : </strong></p>
 
 <p>Titre : <?= htmlspecialchars($post['post_title']) ?> </p> <br />
-<p>Contenu : <?= htmlspecialchars($post['post_content']) ?></p>
+<p>Contenu : <?= $post['post_content'] ?></p>
 
 
 <h3>Vous souhaitez le modifier par :</h3>
@@ -18,11 +18,11 @@
 <form action="index.php?action=editPost&amp;id=<?= $post['id'] ?>" method="post">
     <div>
         <label for="newTitle">Titre</label><br />
-        <input type="text" id="newTitle" name="newTitle" />
+        <input type="text" id="newTitle" name="newTitle" value="<?= ($post['post_title']) ?>" />
     </div>
     <div>
-    <label for="newContent">Contenu</label><br />
-        <textarea id="newContent" name="newContent"></textarea>
+    <label for="chapter">Contenu</label><br />
+        <textarea id="chapter" name="chapter"><?= ($post['post_content']) ?></textarea>
     </div>
     <div>
         <input type="submit" />

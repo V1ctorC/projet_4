@@ -153,7 +153,7 @@ function connect($mail, $password)
 		if (password_verify($password, $secure)) {
 	    	$_SESSION['user_id'] = $hash['user_id'];
 	    	$_SESSION['user_name'] = $hash['user_name'];
-	    	$_SESSION['user_access'] = $hash['user_access'];
+	    	//$_SESSION['user_access'] = $hash['user_access'];
 
 			header('Location: index.php');
 	 	} else {

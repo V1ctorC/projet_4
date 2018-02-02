@@ -87,6 +87,7 @@ try{
 
         elseif ($_GET['action'] == 'admin')
         {
+            access();
             adminListPosts();
         }
 
@@ -94,7 +95,8 @@ try{
         {
             if (!empty($_POST['title']) && !empty($_POST['chapter'])) 
             {
-                    add($_POST['title'], $_POST['chapter']);
+                access();
+                add($_POST['title'], $_POST['chapter']);
             }
             else 
             {
@@ -105,6 +107,7 @@ try{
         {
             if (isset($_GET['id']) && ($_GET['id'] > 0)) 
             {
+                access();
                 deletePost($_GET['id']);
             }
             else
@@ -116,6 +119,7 @@ try{
         {
             if (isset($_GET['comment_id']) && ($_GET['comment_id'] > 0)) 
             {
+                access();
                 deleteComment($_GET['comment_id']);
             }
             else
@@ -128,6 +132,7 @@ try{
         {
             if (isset($_GET['id']) && ($_GET['id'] > 0)) 
             {
+                access();
                 postAlone($_GET['id']);
             }   
             else
@@ -141,6 +146,7 @@ try{
             {
                 if (!empty($_POST['newTitle']) && !empty($_POST['newContent']))
                 {
+                    access();
                     editPost($_POST['newTitle'], $_POST['newContent'], $_GET['id']);
                 }
                 else
@@ -158,6 +164,7 @@ try{
         {
             if (isset($_GET['comment_id']) && ($_GET['comment_id'] > 0)) 
             {
+                access();
                 reportComment($_GET['comment_id']);
             }
             else
@@ -167,11 +174,13 @@ try{
         }
         elseif ($_GET['action'] == 'moderationComment')
         {
+            access();
             adminListComments();
         }
         elseif ($_GET['action'] == 'ignoreComment')
             if (isset($_GET['comment_id']) && ($_GET['comment_id'] > 0)) 
             {
+                access();
                 ignoreComment($_GET['comment_id']);
             }
             else
