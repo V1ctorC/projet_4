@@ -21,7 +21,17 @@
         echo $content ?>
 
         <footer>
-            <a href="index.php?action=admin">Administration du site</a>
+
+            <?php
+            if (isset($_SESSION['user_access'])) 
+            { 
+                $footer = $_SESSION['user_access'];
+                if ($footer === "admin") { ?>
+                    <a href="index.php?action=admin">Administration du site</a>
+                <?php }
+                
+            
+             } ?>
         </footer>
 
         <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
