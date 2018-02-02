@@ -11,7 +11,7 @@
         
         <?php
         if (isset($_SESSION['user_name'])) {
-            echo 'Bonjour ' . $_SESSION['user_name']; ?>
+            echo 'Bonjour ' . htmlspecialchars($_SESSION['user_name']); ?>
             <br /> <a href="index.php?action=disconnect">Deconnexion</a> <?php
 
         } else { ?>

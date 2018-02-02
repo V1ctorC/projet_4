@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <h1>Administration du Blog</h1>
-<em><a href="index.php?action=moderationComment">Moderation des commentaires</a></em>
+<em><a href="index.php?action=moderationComment" id="moderation">Moderation des commentaires</a></em>
 
 <div id="content">
     <div id="posts">
