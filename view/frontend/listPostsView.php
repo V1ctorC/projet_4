@@ -1,7 +1,7 @@
 <?php $title = 'Blog de Jean Forteroche'; ?>
 
 <?php ob_start(); ?>
-<h1>Billet simple pour l'Alaska</h1>
+
 <p>Derniers chapitres publiés :</p>
 
 
