@@ -8,13 +8,13 @@
         
     <body>
         <div id="header">
-            <h1>Billet simple pour l'Alaska</h1>
+            <h1>Billet simple pour l'Alaska <img src="ours.png"></h1>
             <ul id="menu">
                 <li><a href="http://localhost:8888/Projet/projet_4/index.php">Acceuil</a> <br /></li>
 
                 <?php
                 if (isset($_SESSION['user_name'])) { ?>
-                    <li><p>"Bonjour "<?= htmlspecialchars($_SESSION['user_name'])?></p></li>
+                    <li><p>Bonjour <?= htmlspecialchars($_SESSION['user_name'])?></p></li>
                     <li><br /> <a href="index.php?action=disconnect">Deconnexion</a></li> <?php
 
                 } else { ?>

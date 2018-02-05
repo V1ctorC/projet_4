@@ -1,26 +1,33 @@
 body 
 {
-   background-color: #FAFAFA;
+   background-color: #E9EBEE;
    margin: 0;
 }
 
 h1
 {
-    border-bottom: 2px solid blue;
+    border-bottom: 5px solid #032450;
 }
 
 #header
 {
-    border: 2px red solid;
     width: 50%;
     margin-left: auto;
     margin-right: auto; 
     display: flex;
     flex-direction: column;
     text-align: center;
+    border: 2px solid #3b5998;
+    border-radius: 5px;
     background-color: #3b5998;
+    font-size: 1.2em;
     color: white;
 
+}
+
+img
+{
+    width: 6%;
 }
 
 #menu
@@ -30,36 +37,61 @@ h1
     flex-direction: row;
     justify-content: space-around;
     text-decoration: none;
+    margin-bottom: 25px;
 
 }
 
-a:visited
+#header a:visited
 {
     color: white;
+}
+
+a:hover
+{
+    text-decoration: underline;
 }
 
 h3
 {
     text-align:center;
-    background-color:black;
-    color:white;
-    font-size:0.9em;
-    margin-bottom:0px;
+    color: #3b5998;
+    font-size:1.1em;
+    padding-top: 6px;
 }
 .news p
 {
-    background-color:#CCCCCC;
-    margin-top:0px;
+    width: 70%;
+    margin: auto;
+    background-color:#E9EBEE;
+    margin-top: 0px;
+    padding: 5px;
 }
 .news
 {
     width:70%;
     margin:auto;
+    background-color: white;
+    margin-top: 30px;
+}
+
+#lastChapter
+{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 1.3em;
 }
 
 a
 {
     text-decoration: none;
+}
+
+#info
+{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    font-size: 0.9em;
 }
 
 footer

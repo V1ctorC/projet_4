@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-<p>Derniers chapitres publiés :</p>
+<p id="lastChapter">Derniers chapitres publiés :</p>
 
 
 
@@ -13,14 +13,22 @@ while ($data = $posts->fetch())
     <div class="news">
         <h3>
             <?= htmlspecialchars($data['post_title']) ?>
-            <em>le <?= $data['post_dateAdd'] ?></em>
         </h3>
         
         <p>
-            <?= nl2br($data['post_content']) ?>
-            <br />
-            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
+            <?php
+                $test = substr($data['post_content'], 0, 100);
+                $test = $test . " ...";
+                echo nl2br($test);
+            ?>
+
+            
         </p>
+        <div id="info">
+           <em>Posté le <?= $data['post_dateAdd'] ?></em>
+            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em> 
+        </div>
+        
     </div>
 <?php
 }
