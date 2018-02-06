@@ -3,7 +3,6 @@
 <?php ob_start(); ?>
 
 <h2>Billet simple pour l'Alaska</h2>
-<p><a href="index.php">Retour à la liste des chapitres</a></p>
 
 <div class="news">
     <h3>
@@ -23,30 +22,40 @@
 <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
     <div>
         <label for="author">Auteur</label><br />
-        <input type="text" id="author" name="author" />
+        <input type="text" id="author" name="author" class="fields" />
     </div>
     <div>
         <label for="comment">Commentaire</label><br />
         <textarea id="comment" name="comment"></textarea>
     </div>
     <div>
-        <input type="submit" />
+        <input type="submit" class="submit" />
     </div>
 </form>
 
-<?php
-while ($comment = $comments->fetch())
-{
-?>
-    <p><strong></strong> le <?= $comment['comment_date'] ?></p>
-    <p><?= nl2br(htmlspecialchars($comment['comment_content'])) ?></p>
-    <em><a href="index.php?action=editComment&amp;comment_id=<?= $comment['comment_id'] ?>">Modifier</a></em>
-    <em><a href="index.php?action=deleteComment&amp;comment_id=<?= $comment['comment_id'] ?>">Supprimer</a></em>
-    <em><a href="index.php?action=reportComment&amp;comment_id=<?= $comment['comment_id'] ?>">Signaler</a></em>
-    <hr>
-<?php
-}
-?>
+
+<div id="listComment">
+    <?php
+    while ($comment = $comments->fetch())
+    {
+    ?>
+        <p><strong></strong> le <?= $comment['comment_date'] ?></p>
+        <p><?= nl2br(htmlspecialchars($comment['comment_content'])) ?></p>
+        <?php if (isset($_SESSION['user_access'])) 
+                    { 
+                        $access = $_SESSION['user_access'];
+                        if ($access === "admin") { ?>
+                            <a href="index.php?action=editComment&amp;comment_id=<?= $comment['comment_id'] ?>">Modifier</a>
+                            <a href="index.php?action=deleteComment&amp;comment_id=<?= $comment['comment_id'] ?>">Supprimer</a>
+                        <?php } 
+                    } ?>
+
+        <a href="index.php?action=reportComment&amp;comment_id=<?= $comment['comment_id'] ?>" id="report">Signaler</a>
+        <hr>
+    <?php
+    }
+    ?>
+</div>
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

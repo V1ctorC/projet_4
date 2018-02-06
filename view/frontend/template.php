@@ -8,7 +8,7 @@
         
     <body>
         <div id="header">
-            <h1>Billet simple pour l'Alaska <img src="ours.png"></h1>
+            <h1>Billet simple pour l'Alaska <img src="public/images/ours.png"></h1>
             <ul id="menu">
                 <li><a href="index.php">Acceuil</a></li>
 

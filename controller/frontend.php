@@ -57,14 +57,7 @@ function edit($newComment, $commentId)
 	require('view/frontend/editComment.php');
 }
 
-function comment()
-{
-	$commentManager = new CommentManager;
 
-	$commentA = $commentManager->getComment($_GET['comment_id']);
-
-	require('view/frontend/editComment.php');
-}
 
 function create($mail, $pseudo, $password, $verifPassword)
 {

@@ -31,29 +31,6 @@ try{
 
             }
         }
-        elseif ($_GET['action'] == 'editComment') {
-            if (isset($_GET['comment_id']) && $_GET['comment_id'] > 0) {
-                comment();
-            }
-            else {
-                throw new Exception("Erreur : identifiant commentaire inconnu");
-                
-            }
-        }
-        elseif ($_GET['action'] == 'edit') {
-            if (isset($_GET['comment_id']) && $_GET['comment_id'] > 0) {
-               
-                if (!empty($_POST['newComment'])) {
-                    edit($_POST['newComment'], $_GET['comment_id']);
-                }
-                else {
-                    throw new Exception("Le champs n'est pas remplis");                   
-                }
-            }
-            else {
-                throw new Exception("Erreur : Identifiant du commentaire non valide");           
-            }
-        }
         elseif ($_GET['action'] == 'create') {
             if (!empty($_POST['mail']) && !empty($_POST['pseudo']) && !empty($_POST['password']) && !empty($_POST['verifPassword'])) {
                 create($_POST['mail'], $_POST['pseudo'], $_POST['password'], $_POST['verifPassword']);
@@ -184,6 +161,31 @@ try{
         {
             access();
             adminListComments();
+        }
+        elseif ($_GET['action'] == 'editComment') {
+            if (isset($_GET['comment_id']) && $_GET['comment_id'] > 0) {
+                access();
+                comment();
+            }
+            else {
+                throw new Exception("Erreur : identifiant commentaire inconnu");
+                
+            }
+        }
+        elseif ($_GET['action'] == 'edit') {
+            if (isset($_GET['comment_id']) && $_GET['comment_id'] > 0) {
+               
+                if (!empty($_POST['newComment'])) {
+                    access();
+                    edit($_POST['newComment'], $_GET['comment_id']);
+                }
+                else {
+                    throw new Exception("Le champs n'est pas remplis");                   
+                }
+            }
+            else {
+                throw new Exception("Erreur : Identifiant du commentaire non valide");           
+            }
         }
         elseif ($_GET['action'] == 'ignoreComment')
             if (isset($_GET['comment_id']) && ($_GET['comment_id'] > 0)) 

@@ -17,7 +17,7 @@ function access()
 		}
 		else
 		{
-			throw new Exception("Erreur : Vous n'avez pas les droits d'être ici");			
+			throw new Exception("Erreur : Vous n'avez pas le droit d'être ici");			
 		}
 	}
 	else
@@ -78,6 +78,15 @@ function deletePost($postId)
         header('Location: index.php?action=admin');
     }
 	require('view/backend/administration.php');
+}
+
+function comment()
+{
+	$commentManager = new CommentManager;
+
+	$commentA = $commentManager->getComment($_GET['comment_id']);
+
+	require('view/backend/editComment.php');
 }
 
 function deleteComment($commentId)
