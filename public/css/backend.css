@@ -6,7 +6,7 @@ body
 
 h1
 {
-    border-bottom: 5px solid #032450;
+	border-bottom: 5px solid #032450;
 }
 
 h2
@@ -23,7 +23,60 @@ h3
     padding-top: 6px;
 }
 
-#moderation
+header
+{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto; 
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid #3b5998;
+    border-radius: 5px;
+    background-color: #3b5998;
+    font-size: 1.2em;
+    color: white;
+
+}
+
+header a:visited
+{
+	color: white;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+#bear
+{
+    width: 6%;
+}
+
+ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+#menu
+{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+    margin-bottom: 25px;
+
+}
+
+#posts
+{
+	width: 100%;
+	text-align: center;
+}
+
+#home
 {
 	background-color: #3b5998;
 	border: 15px solid #3b5998;
@@ -37,24 +90,11 @@ h3
 	margin-left: auto;
 }
 
-#posts
-{
-	width: 100%;
-	text-align: center;
-}
-
-#addArticle
-{
-	margin-left: 10%;
-	width: 80%;
-	background-color: #e0dfe4;
-
-}
 
 form
 {
     background-color: #F6F7F9;
-    width: 50%;
+    width: 70%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -78,5 +118,5 @@ textarea
 {
     width: 70%;
     max-width: 99%;
-    height: 100px;
+    height: 300px;
 }

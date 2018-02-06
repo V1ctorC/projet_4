@@ -7,7 +7,7 @@
     </head>
         
     <body>
-        <div id="header">
+        <header>
             <h1>Billet simple pour l'Alaska <img src="public/images/ours.png" id="bear"></h1>
             <ul id="menu">
                 <li><a href="index.php">Acceuil</a></li>
@@ -30,7 +30,7 @@
                     <li><a href="index.php?action=connectPage">Connexion</a></li>
                 <?php } ?> 
             </ul>  
-        </div>
+        </header>
         
         <?= $content ?>
 

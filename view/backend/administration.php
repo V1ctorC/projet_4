@@ -18,7 +18,7 @@
                 <textarea id="chapter" name="chapter"></textarea>
             </div>
             <div>
-                <input type="submit" />
+                <input type="submit" class="submit" />
             </div>
             </form>
         </div>
