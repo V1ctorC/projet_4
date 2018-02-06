@@ -120,3 +120,25 @@ textarea
     max-width: 99%;
     height: 300px;
 }
+
+.news p
+{
+    width: 70%;
+    margin: auto;
+    margin-top: 0px;
+    padding: 5px;
+}
+
+.news
+{
+    width:70%;
+    margin:auto;
+    background-color: white;
+    margin-top: 30px;
+}
+
+#dateAdmin
+{
+	font-size: 0.7em;
+
+}

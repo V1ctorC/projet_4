@@ -2,10 +2,9 @@
 
 <?php ob_start(); ?>
 
-<h1>Editer un commentaire</h1>
+<h2>Editer un commentaire</h2>
 <p><a href="index.php">Retour à la liste des billets</a></p>
 
-<h2>Commentaire</h2>
 
 <p><strong>Le commentaire actuel est : </strong><?= htmlspecialchars($commentA['comment_content']) ?> </p>
 

@@ -70,7 +70,7 @@ class CommentManager extends Manager
 	public function getReportComment()
 	{
 		$db = $this->dbConnect();
-		$req = $db->query('SELECT comment_id, comment_date, comment_content, comment_report FROM comments WHERE comment_report > 0 ORDER BY comment_report DESC LIMIT 0, 5');
+		$req = $db->query('SELECT comment_id, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date, comment_content, comment_report FROM comments WHERE comment_report > 0 ORDER BY comment_report DESC LIMIT 0, 5');
 
 		return $req;
 	}

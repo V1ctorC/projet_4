@@ -1,12 +1,10 @@
 <?php $title = "Administration"; ?>
 
 <?php ob_start(); ?>
-<h1>Administration du Blog</h1>
-<em><a href="index.php?action=moderationComment" id="moderation">Moderation des commentaires</a></em>
+<h2>Administration du Blog</h2>
 
 <div id="content">
     <div id="posts">
-        <h2>posts</h2>
         <div id="addArticle">
             <form action="index.php?action=addPost" method="post">
             <div>
@@ -30,7 +28,6 @@
             <div class="news">
                 <h3>
                     <?= htmlspecialchars($data['post_title']) ?>
-                    <em>le <?= $data['post_dateAddFormat'] ?></em>
                 </h3>
         
                 <p>
@@ -38,7 +35,8 @@
                     <br />
                     <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
                     <em><a href="index.php?action=postAlone&amp;id=<?= $data['id'] ?>">Editer</a></em>
-                    <em><a href="index.php?action=delete&amp;id=<?= $data['id'] ?>">Supprimer</a></em>
+                    <em><a href="index.php?action=delete&amp;id=<?= $data['id'] ?>">Supprimer</a></em> <br />
+                    <em id="dateAdmin"><?= $data['post_dateAddFormat'] ?></em>
                 </p>
             </div>
         <?php

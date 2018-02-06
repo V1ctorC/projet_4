@@ -1,10 +1,9 @@
 <?php $title = "Modifier un chapitre"; ?>
 
 <?php ob_start(); ?>
-<h1>Editer un chapitre</h1>
+<h2>Editer un chapitre</h2>
 <p><a href="index.php">Retour à la liste des chapitres</a></p>
 
-<h2>Chapitre</h2>
 
 <p><strong>Le chapitre actuel est : </strong></p>
 

@@ -1,12 +1,11 @@
 <?php $title = "Moderation commentaires"; ?>
 
 <?php ob_start(); ?>
-<h1>Modération des commentaires</h1>
+<h2>Modération des commentaires</h2>
 
 <div id="content">
     
     <div id="comments">
-        <h2>comments</h2>
 
         <?php
         while ($comment = $comments->fetch())
