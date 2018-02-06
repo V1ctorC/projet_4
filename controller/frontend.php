@@ -143,6 +143,16 @@ function create($mail, $pseudo, $password, $verifPassword)
 	require ('view/frontend/connect.php');
 }*/
 
+function registration()
+{
+	require ('view/frontend/registration.php');
+}
+
+function connectPage()
+{
+	require ('view/frontend/connect.php');
+}
+
 function connect($mail, $password)
 {
 	$userManager = new UserManager;

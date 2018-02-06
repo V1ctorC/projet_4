@@ -10,16 +10,16 @@
         <div id="header">
             <h1>Billet simple pour l'Alaska <img src="ours.png"></h1>
             <ul id="menu">
-                <li><a href="http://localhost:8888/Projet/projet_4/index.php">Acceuil</a> <br /></li>
+                <li><a href="http://localhost:8888/Projet/projet_4/index.php">Acceuil</a></li>
 
                 <?php
                 if (isset($_SESSION['user_name'])) { ?>
-                    <li><p>Bonjour <?= htmlspecialchars($_SESSION['user_name'])?></p></li>
-                    <li><br /> <a href="index.php?action=disconnect">Deconnexion</a></li> <?php
+                    <li>Bonjour <?= htmlspecialchars($_SESSION['user_name'])?></li>
+                    <li><a href="index.php?action=disconnect">Deconnexion</a></li> <?php
 
                 } else { ?>
-                    <li><a href="http://localhost:8888/Projet/projet_4/view/frontend/registration.php">S'inscrire</a></li>
-                    <li><a href="http://localhost:8888/Projet/projet_4/view/frontend/connect.php">Connexion</a></li>
+                    <li><a href="index.php?action=registration">S'inscrire</a></li>
+                    <li><a href="index.php?action=connectPage">Connexion</a></li>
                 <?php } ?> 
             </ul>  
         </div>

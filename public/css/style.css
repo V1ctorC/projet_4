@@ -94,6 +94,22 @@ a
     font-size: 0.9em;
 }
 
+form
+{
+    background-color: #F6F7F9;
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fields
+{
+    width: 50%;
+    height: 25px;
+    font-size: 20px;
+}
+
 footer
 {
     background-color: grey;

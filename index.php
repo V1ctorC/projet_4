@@ -63,6 +63,14 @@ try{
                 
             }
         }
+
+        elseif ($_GET['action'] == 'registration') {
+            registration();
+        }
+
+        elseif ($_GET['action'] == 'connectPage') {
+            connectPage();
+        }
         elseif ($_GET['action'] == 'connect'){
             if (!empty($_POST['mail']) && !empty($_POST['password'])) {
                 connect($_POST['mail'], $_POST['password']);

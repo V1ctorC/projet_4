@@ -25,8 +25,8 @@ while ($data = $posts->fetch())
             
         </p>
         <div id="info">
-           <em>Posté le <?= $data['post_dateAdd'] ?></em>
-            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em> 
+           <em>Posté le <?= $data['post_dateAddFormat'] ?></em>
+            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite / Commentaires</a></em> 
         </div>
         
     </div>
