@@ -14,7 +14,15 @@
 
                 <?php
                 if (isset($_SESSION['user_name'])) { ?>
-                    <li>Bonjour <?= htmlspecialchars($_SESSION['user_name'])?></li>
+                    <li><strong>Bonjour <?= htmlspecialchars($_SESSION['user_name'])?></strong></li>
+                    <?php
+                    if (isset($_SESSION['user_access'])) 
+                    { 
+                        $access = $_SESSION['user_access'];
+                        if ($access === "admin") { ?>
+                            <li><a href="index.php?action=admin">Administration du site</a></li>
+                        <?php } 
+                    } ?>
                     <li><a href="index.php?action=disconnect">Deconnexion</a></li> <?php
 
                 } else { ?>
@@ -25,20 +33,6 @@
         </div>
         
         <?= $content ?>
-
-        <div id="administration">
-
-            <?php
-            if (isset($_SESSION['user_access'])) 
-            { 
-                $footer = $_SESSION['user_access'];
-                if ($footer === "admin") { ?>
-                    <a href="index.php?action=admin">Administration du site</a>
-                <?php }
-                
-            
-             } ?>
-        </div>
 
         <footer>
             OpenClassrooms 2018 - Projet 4

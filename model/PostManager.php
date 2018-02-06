@@ -9,7 +9,7 @@ class PostManager extends Manager
 	{
 
 		$db = $this->dbConnect();
-		$req = $db->query('SELECT id, post_title, post_content, DATE_FORMAT(post_dateAdd, \'%d/%m/%Y\') AS post_dateAddFormat FROM posts ORDER BY post_dateAdd DESC LIMIT 0, 5');
+		$req = $db->query('SELECT id, post_title, post_content, DATE_FORMAT(post_dateAdd, \'%d/%m/%Y\') AS post_dateAddFormat FROM posts ORDER BY post_dateAdd DESC');
 
 		return $req;
 	}
