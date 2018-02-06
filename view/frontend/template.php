@@ -10,7 +10,7 @@
         <div id="header">
             <h1>Billet simple pour l'Alaska <img src="ours.png"></h1>
             <ul id="menu">
-                <li><a href="http://localhost:8888/Projet/projet_4/index.php">Acceuil</a></li>
+                <li><a href="index.php">Acceuil</a></li>
 
                 <?php
                 if (isset($_SESSION['user_name'])) { ?>
@@ -26,7 +26,7 @@
         
         <?= $content ?>
 
-        <footer>
+        <div id="administration">
 
             <?php
             if (isset($_SESSION['user_access'])) 
@@ -38,6 +38,10 @@
                 
             
              } ?>
+        </div>
+
+        <footer>
+            OpenClassrooms 2018 - Projet 4
         </footer>
 
         <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>

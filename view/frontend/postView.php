@@ -8,12 +8,14 @@
 <div class="news">
     <h3>
         <?= htmlspecialchars($post['post_title']) ?>
-        <em>le <?= $post['post_dateAdd'] ?></em>
     </h3>
     
     <p>
-        <?= nl2br(htmlspecialchars($post['post_content'])) ?>
+        <?= nl2br($post['post_content']) ?>
     </p>
+    <div id="info">
+        <em>le <?= $post['post_dateAddFormat'] ?></em>
+    </div>
 </div>
 
 <h2>Commentaires</h2>

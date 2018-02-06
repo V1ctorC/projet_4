@@ -6,15 +6,15 @@
 
 <form action="index.php?action=connect" method="post">
     <div>
-        <label for="mail">Adresse e-mail</label><br />
+        <label for="mail" id="label">Adresse e-mail</label><br />
         <input type="email" name="mail" id="mail" class="fields">
     </div>
     <div>
-    	<label for="password">Mot de passe</label><br />
+    	<label for="password" id="label">Mot de passe</label><br />
     	<input type="password" name="password" id="password" class="fields">
     </div>
     <div>
-        <input type="submit" />
+        <input type="submit" class="submit" />
     </div>
 </form>
 

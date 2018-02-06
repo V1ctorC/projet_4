@@ -21,7 +21,7 @@
         <input type="password" name="verifPassword" id="verifPassword" class="fields">
     </div>
     <div>
-        <input type="submit" />
+        <input type="submit" class="submit" />
     </div>
 </form>
 

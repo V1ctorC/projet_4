@@ -17,9 +17,9 @@ while ($data = $posts->fetch())
         
         <p>
             <?php
-                $test = substr($data['post_content'], 0, 100);
-                $test = $test . " ...";
-                echo nl2br($test);
+                $newsText = substr($data['post_content'], 0, 100);
+                $newsText = $newsText . " ...";
+                echo nl2br($newsText);
             ?>
 
             
@@ -30,10 +30,12 @@ while ($data = $posts->fetch())
         </div>
         
     </div>
+
+
 <?php
 }
+
 $posts->closeCursor();
-?>
-<?php $content = ob_get_clean(); ?>
+$content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
