@@ -2,11 +2,7 @@
 <html>
     <head>
     	<script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
-		<script>
-		tinymce.init({
-		selector: '#chapter'
-		});
-		</script>
+        <script src='public/js/script.js'></script>
         <meta charset="utf-8" />
         <title><?= $title ?></title>
         <link href="public/css/backend.css" rel="stylesheet" />

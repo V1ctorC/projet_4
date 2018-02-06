@@ -11,7 +11,7 @@
             <form action="index.php?action=addPost" method="post">
             <div>
                 <label for="title">Titre</label><br />
-                <input type="text" id="title" name="title" />
+                <input type="text" id="title" name="title" class="fields" />
                 </div>
             <div>
                 <label for="chapter">Contenu</label><br />
@@ -30,7 +30,7 @@
             <div class="news">
                 <h3>
                     <?= htmlspecialchars($data['post_title']) ?>
-                    <em>le <?= $data['post_dateAdd'] ?></em>
+                    <em>le <?= $data['post_dateAddFormat'] ?></em>
                 </h3>
         
                 <p>

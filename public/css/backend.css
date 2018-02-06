@@ -1,6 +1,26 @@
-body
+body 
 {
-	margin: 0;
+   background-color: #E9EBEE;
+   margin: 0;
+}
+
+h1
+{
+    border-bottom: 5px solid #032450;
+}
+
+h2
+{
+    text-align: center;
+    font-size: 2.5em;
+}
+
+h3
+{
+    text-align:center;
+    color: #3b5998;
+    font-size:1.4em;
+    padding-top: 6px;
 }
 
 #moderation
@@ -29,4 +49,34 @@ body
 	width: 80%;
 	background-color: #e0dfe4;
 
+}
+
+form
+{
+    background-color: #F6F7F9;
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+.fields
+{
+    width: 70%;
+    height: 30px;
+    font-size: 25px;
+}
+
+.submit
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+textarea
+{
+    width: 70%;
+    max-width: 99%;
+    height: 100px;
 }
