@@ -140,10 +140,10 @@ try{
         {
             if (isset($_GET['id']) && ($_GET['id'] > 0))
             {
-                if (!empty($_POST['newTitle']) && !empty($_POST['newContent']))
+                if (!empty($_POST['newTitle']) && !empty($_POST['chapter']))
                 {
                     access();
-                    editPost($_POST['newTitle'], $_POST['newContent'], $_GET['id']);
+                    editPost($_POST['newTitle'], $_POST['chapter'], $_GET['id']);
                 }
                 else
                 {

@@ -29,5 +29,9 @@
         </header>
         <?php echo $content ?>
 
+        <footer>
+            OpenClassrooms 2018 - Projet 4
+        </footer>
+
     </body>
 </html>
