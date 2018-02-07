@@ -16,17 +16,28 @@ try{
                 throw new Exception("Erreur : aucun identifiant de billet envoyé");
             }
         }
-        elseif ($_GET['action'] == 'addComment') {
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
-                if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                    addComment($_GET['id'], $_POST['author'], $_POST['comment']);
-                }
-                else {
-                    throw new Exception("Erreur : tous les champs ne sont pas remplis !");
-
+        elseif ($_GET['action'] == 'addComment') 
+        {
+            if (isset($_GET['id']) && $_GET['id'] > 0) 
+            {
+                if (isset($_SESSION['user_id'])) 
+                {
+                    if (!empty($_POST['comment'])) 
+                    {
+                        addComment($_GET['id'], $_SESSION['user_id'], $_POST['comment']);
+                    }
+                    else 
+                    {
+                        throw new Exception("Erreur : Le champs commentaire est vide");                 
+                    }
+                }                     
+                else
+                {
+                    throw new Exception("Erreur : Vous n'êtes pas connecté");
                 }
             }
-            else {
+            else 
+            {
                 throw new Exception("Erreur : aucun identifiant de billet envoyé");
 
             }

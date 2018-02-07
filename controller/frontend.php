@@ -115,26 +115,6 @@ function create($mail, $pseudo, $password, $verifPassword)
 	require ('view/frontend/registration.php');
 }
 
-/*function connect($mail, $password)
-{
-	$userManager = new UserManager;
-	
-	$log = $userManager->connectUser($mail, $password);
-
-	if (!$log) {
-		throw new Exception("Identifiant ou mot de passe incorrect");
-		
-	} else {
-		session_start();
-    	$_SESSION['user_id'] = $log['user_id'];
-    	$_SESSION['user_name'] = $log['user_name'];
-    	setcookie('pseudo', $log['user_name'], time() + 365*24*3600, null, null, false, true);
-
-		header('Location: index.php');
-	}
-
-	require ('view/frontend/connect.php');
-}*/
 
 function registration()
 {

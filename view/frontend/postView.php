@@ -20,10 +20,10 @@
 <h2>Commentaires</h2>
 
 <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
-    <div>
+    <!--<div>
         <label for="author">Auteur</label><br />
         <input type="text" id="author" name="author" class="fields" />
-    </div>
+    </div>-->
     <div>
         <label for="comment">Commentaire</label><br />
         <textarea id="comment" name="comment"></textarea>
@@ -39,7 +39,7 @@
     while ($comment = $comments->fetch())
     {
     ?>
-        <p><strong></strong> le <?= $comment['comment_date'] ?></p>
+        <p><strong><?= $comment['user_pseudo'] ?></strong> le <?= $comment['comment_dateFormat'] ?></p>
         <p><?= nl2br(htmlspecialchars($comment['comment_content'])) ?></p>
         <?php if (isset($_SESSION['user_access'])) 
                     { 
