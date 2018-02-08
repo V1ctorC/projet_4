@@ -20,10 +20,6 @@
 <h2>Commentaires</h2>
 
 <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
-    <!--<div>
-        <label for="author">Auteur</label><br />
-        <input type="text" id="author" name="author" class="fields" />
-    </div>-->
     <div>
         <label for="comment">Commentaire</label><br />
         <textarea id="comment" name="comment"></textarea>
@@ -45,12 +41,15 @@
                     { 
                         $access = $_SESSION['user_access'];
                         if ($access === "admin") { ?>
-                            <a href="index.php?action=editComment&amp;comment_id=<?= $comment['comment_id'] ?>">Modifier</a>
-                            <a href="index.php?action=deleteComment&amp;comment_id=<?= $comment['comment_id'] ?>">Supprimer</a>
-                        <?php } 
-                    } ?>
-
-        <a href="index.php?action=reportComment&amp;comment_id=<?= $comment['comment_id'] ?>" id="report">Signaler</a>
+                            <a href="index.php?action=editComment&amp;comment_id=<?= $comment['comment_id'] ?>" class="adminButton">Modifier</a>
+                            <a href="index.php?action=deleteComment&amp;comment_id=<?= $comment['comment_id'] ?>" class="adminButton">Supprimer</a>
+                        <?php
+                        } else { ?>
+                            <a href="index.php?action=reportComment&amp;comment_id=<?= $comment['comment_id'] ?>" id="report">Signaler</a> <?php
+                        }
+                    } else { ?>
+                            <a href="index.php?action=reportComment&amp;comment_id=<?= $comment['comment_id'] ?>" id="report">Signaler</a> <?php
+                    }?>
         <hr>
     <?php
     }

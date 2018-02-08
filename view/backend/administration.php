@@ -33,9 +33,9 @@
                 <p>
                     <?= nl2br($data['post_content']) ?>
                     <br />
-                    <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
-                    <em><a href="index.php?action=postAlone&amp;id=<?= $data['id'] ?>">Editer</a></em>
-                    <em><a href="index.php?action=delete&amp;id=<?= $data['id'] ?>">Supprimer</a></em> <br />
+                    <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="adminButton">Commentaires</a></em>
+                    <em><a href="index.php?action=postAlone&amp;id=<?= $data['id'] ?>" class="adminButton">Editer</a></em>
+                    <em><a href="index.php?action=delete&amp;id=<?= $data['id'] ?>" class="adminButton">Supprimer</a></em> <br />
                     <em id="dateAdmin"><?= $data['post_dateAddFormat'] ?></em>
                 </p>
             </div>

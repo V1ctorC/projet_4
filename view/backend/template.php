@@ -12,18 +12,18 @@
         <header>
             <h1>Billet simple pour l'Alaska <img src="public/images/ours.png" id="bear"></h1>
             <ul id="menu">
-                    <li><a href="index.php">Acceuil</a></li>
+                    <li><a href="index.php">Accueil</a></li>
 
                     <?php
                     if (isset($_SESSION['user_access'])) 
                     { 
                         $access = $_SESSION['user_access'];
                         if ($access === "admin") { ?>
-                            <li><a href="index.php?action=moderationComment">Moderation des commentaires</a></li>
+                            <li><a href="index.php?action=moderationComment">Modération des commentaires</a></li>
                             <li><a href="index.php?action=admin">Administration du site</a></li>
                         <?php } 
                     } ?>
-                        <li><a href="index.php?action=disconnect">Deconnexion</a></li>
+                        <li><a href="index.php?action=disconnect">Déconnexion</a></li>
 
             </ul>
         </header>
