@@ -182,3 +182,55 @@ footer
     text-align: center;
     margin-top: 20px;
 }
+
+
+
+@media all and (max-width: 1200px)
+{
+    header
+    {
+        width: 100%;
+        border-radius: 0;
+        border: 0;
+    }
+
+    #menu
+    {
+        flex-direction: column;
+    }
+
+    #menu li
+    {
+        margin-bottom: 10px;
+    }
+
+    .news
+    {
+        width: 90%;
+    }
+
+    .news p
+    {
+        width: 90%;
+    }
+
+    #info
+    {
+        flex-wrap: wrap;
+    }
+
+    form
+    {
+        width: 90%;
+    }
+
+    textarea
+    {
+        width: 90%;
+    }
+
+    .fields
+    {
+        width: 90%;
+    }
+}
