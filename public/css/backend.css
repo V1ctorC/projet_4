@@ -162,3 +162,38 @@ footer
     text-align: center;
     margin-top: 20px;
 }
+
+@media all and (max-width: 1200px)
+{
+    header
+    {
+        width: 100%;
+        border-radius: 0;
+        border: 0;
+    }
+
+    #menu
+    {
+        flex-direction: column;
+    }
+
+    #menu li
+    {
+        margin-bottom: 10px;
+    }
+
+    .news
+    {
+        width: 90%;
+    }
+
+    form
+    {
+        width: 90%;
+    }
+
+    .fields
+    {
+        width: 90%;
+    }
+}

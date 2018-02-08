@@ -160,7 +160,7 @@ try{
         {
             if (isset($_GET['comment_id']) && ($_GET['comment_id'] > 0)) 
             {
-                access();
+                //access();
                 reportComment($_GET['comment_id']);
             }
             else

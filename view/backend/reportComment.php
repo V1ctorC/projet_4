@@ -21,8 +21,8 @@
                 
                 </p>
                 <p>Nombre de signalement : <?= $comment['comment_report'] ?></p>
-                <em><a href="index.php?action=deleteComment&amp;comment_id=<?= $comment['comment_id'] ?>">Supprimer</a></em>
-                <em><a href="index.php?action=ignoreComment&amp;comment_id=<?= $comment['comment_id'] ?>">Ignorer</a></em>
+                <em><a href="index.php?action=deleteComment&amp;comment_id=<?= $comment['comment_id'] ?>" class="adminButton">Supprimer</a></em>
+                <em><a href="index.php?action=ignoreComment&amp;comment_id=<?= $comment['comment_id'] ?>" class="adminButton">Ignorer</a></em>
             </div>
         <?php
         }
