@@ -57,6 +57,11 @@ header a:visited
     color: white;
 }
 
+header a
+{
+    color: white;
+}
+
 a:hover
 {
     text-decoration: underline;

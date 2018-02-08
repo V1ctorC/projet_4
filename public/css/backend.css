@@ -44,6 +44,11 @@ header a:visited
 	color: white;
 }
 
+header a
+{
+    color: white;
+}
+
 a
 {
 	text-decoration: none;
