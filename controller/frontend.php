@@ -86,7 +86,7 @@ function create($mail, $pseudo, $password, $verifPassword)
 							throw new Exception("Impossible de vous inscrire");
 							
 						} else {
-							header('Location : index.php');
+							header('Location: index.php');
 						}
 		       		
 		       		} else {

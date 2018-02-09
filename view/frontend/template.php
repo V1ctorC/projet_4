@@ -3,13 +3,14 @@
     <head>
         <!--<meta charset="utf-8" /> -->
         <title><?= $title ?></title>
-        <link href="public/css/style.css" rel="stylesheet" /> 
+        <link href="public/css/style.css" rel="stylesheet" />
     </head>
         
     <body>
         <header>
             <h1>Billet simple pour l'Alaska <img src="public/images/ours.png" id="bear"></h1>
             <ul id="menu">
+                
                 <li><a href="index.php">Accueil</a></li>
 
                 <?php
